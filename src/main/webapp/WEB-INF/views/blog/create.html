@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="/blog/layout :: head"></head>
 <body>
+<div align="center">
+<h2>Create form</h2>
 <form action="/blogs/create" method="post">
-    <input name="title">
-    <input name="content">
-    <input name="author">
-    <input name="category">
+    <table border="1px"cellpadding="5">
+        <tr><td>ID</td>
+            <td><input name="title"></td>
+        </tr>
+        <tr><td>Content</td>
+            <td><input name="content"></td>
+        </tr><td>Author</td>
+            <td><input name="author"></td>
+        <tr><td>Category</td>
+            <td><input name="category"></td>
+        </tr>
+    </table>
     <button>create</button>
+    <button> <a href="/blogs/">Back to list</a></button>
 </form>
-<a href="/blogs/">Back to list</a>
+</div>
+
 </body>
 </html>

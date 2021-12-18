@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="/blog/layout :: head"></head>
 <body>
-<h2>Delete blog</h2>
-<a href="/blogs/">Back to list</a>
-<form action="/blogs/delete-blog" method="post">
-    <input name="id" th:value="${delete.getId()}">
-    <input name="title" th:value="${delete.getTitle()}">
-    <input name="content" th:value="${delete.getContent()}">
-    <input name="author" th:value="${delete.getAuthor()}">
-    <input name="category" th:value="${delete.getCategory()}">
-    <br>
-    <button>Delete</button>
-</form>
+<div align="center">
+    <button> <a href="/blogs/">Back to list</a></button>
+    <hr>
+    <h2>Delete blog</h2>
+    <form action="/blogs/delete-blog" method="post">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>
+                    <input name="id" th:value="${delete.getId()}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    <input name="title" th:value="${delete.getTitle()}">
+                </td>
+                </tr>
+            <tr>
+                <td>Content</td>
+                <td>
+                    <input name="content" th:value="${delete.getContent()}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Author
+                </td>
+                <td>
+                    <input name="author" th:value="${delete.getAuthor()}">
+                </td>
+                </tr>
+            <tr>
+                <td>
+                    Category
+                </td>
+                <td>
+                    <input name="category" th:value="${delete.getCategory()}">
+                </td>
+            </tr>
+        </table>
+        <button>Delete</button>
+    </form>
+</div>
 </body>
 </html>

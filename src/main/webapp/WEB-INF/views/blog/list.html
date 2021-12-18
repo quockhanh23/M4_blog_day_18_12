@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="/blog/layout :: head"></head>
 <body>
-<a href="/blogs/create-blog">create new blogs</a>
-<table>
-    <tr th:each="list : ${listBlog}">
-        <td th:text="${list.id}"></td>
-        <td th:text="${list.category}"></td>
-        <td th:text="${list.content}"></td>
-        <td th:text="${list.title}"></td>
-        <td th:text="${list.author}"></td>
-        <td><a th:href="@{/blogs/edit-blog/__${list.id}__ }">Edit</a></td>
-        <td><a th:href="@{/blogs/delete-blog/__${list.id}__ }">Delete</a></td>
-    </tr>
-</table>
+<div align="center">
+
+   <button> <a href="/blogs/create-blog">create new blogs</a></button>
+    <hr>
+    <h2>List blog</h2>
+    <table cellpadding="1" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Content</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th style="color: rebeccapurple">Edit</th>
+            <th style="color: rebeccapurple">Delete</th>
+        </tr>
+        <tr th:each="list : ${listBlog}">
+            <td th:text="${list.id}"></td>
+            <td th:text="${list.category}"></td>
+            <td th:text="${list.content}"></td>
+            <td th:text="${list.title}"></td>
+            <td th:text="${list.author}"></td>
+            <td>
+                <button><a th:href="@{/blogs/edit-blog/__${list.id}__ }">Edit</a></button>
+            </td>
+            <td>
+                <button><a th:href="@{/blogs/delete-blog/__${list.id}__ }">Delete</a></button>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

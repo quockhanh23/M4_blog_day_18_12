@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="/blog/layout :: head"></head>
 <body>
-<h2>Edit blog</h2>
-<a href="/blogs/">Back to list</a>
-<form action="/blogs/edit-blog" method="post">
-    <input name="title" th:value="${blog.title}">
-    <input name="content" th:value="${blog.content}">
-    <input name="author" th:value="${blog.author}">
-    <input name="category" th:value="${blog.category}">
-    <br>
-    <button>Edit</button>
-</form>
+<div align="center">
+    <button>
+        <a href="/blogs/">Back to list</a>
+    </button>
+    <hr>
+    <h2>Edit blog</h2>
+    <form action="/blogs/edit-blog" method="post">
+        <table>
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    <input name="title" th:value="${blog.title}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Content
+                </td>
+                <td>
+                    <input name="content" th:value="${blog.content}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Author
+                </td>
+                <td>
+                    <input name="author" th:value="${blog.author}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Category
+                </td>
+                <td>
+                    <input name="category" th:value="${blog.category}">
+                </td>
+            </tr>
+        </table>
+        <button>Edit</button>
+    </form>
+</div>
 </body>
 </html>
