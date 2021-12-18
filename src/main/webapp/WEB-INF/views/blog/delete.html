@@ -3,8 +3,6 @@
 <head th:replace="/blog/layout :: head"></head>
 <body>
 <div align="center">
-    <button> <a href="/blogs/">Back to list</a></button>
-    <hr>
     <h2>Delete blog</h2>
     <form action="/blogs/delete-blog" method="post">
         <table>
@@ -46,6 +44,7 @@
             </tr>
         </table>
         <button>Delete</button>
+        <button> <a href="/blogs/">Back to list</a></button>
     </form>
 </div>
 </body>

@@ -3,10 +3,6 @@
 <head th:replace="/blog/layout :: head"></head>
 <body>
 <div align="center">
-    <button>
-        <a href="/blogs/">Back to list</a>
-    </button>
-    <hr>
     <h2>Edit blog</h2>
     <form action="/blogs/edit-blog" method="post">
         <table>
@@ -44,6 +40,9 @@
             </tr>
         </table>
         <button>Edit</button>
+        <button>
+            <a href="/blogs/">Back to list</a>
+        </button>
     </form>
 </div>
 </body>
